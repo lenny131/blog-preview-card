@@ -1,0 +1,292 @@
+:root {
+    /* colors */
+    --yellow: hsl(47, 88%, 63%);
+    --white: hsl(0, 0%, 100%);
+    --gray-500: hsl(0, 0%, 42%);
+    --gray-950: hsl(0, 0%, 7%);
+    --black: hsl(0, 0%, 0%);
+
+    /* font regular (figtree medium) */
+    --font-reg-family: "Figtree", serif;
+    --font-reg-optical-sizing: auto;
+    --font-reg-weight: 500;
+    --font-reg-style: normal;
+
+    /* font bold (figtree extra bold) */
+    --font-bold-family: "Figtree", serif;
+    --font-bold-optical-sizing: auto;
+    --font-bold-weight: 800;
+    --font-bold-style: normal;
+
+    /* text preset 1 */
+    --tp1-font-family: var(--font-bold-family);
+    --tp1-font-optical-sizing: var(--font-bold-optical-sizing);
+    --tp1-font-weight: var(--font-bold-weight);
+    --tp1-font-style: var(--font-bold-style);
+    --tp1-font-size: 24px;
+    --tp1-font-size-mobile: 20px;
+    --tp1-line-height: 150%;
+    --tp1-letter-spacing: 0px;
+
+    /* text preset 2 */
+    --tp2-font-family: var(--font-reg-family);
+    --tp2-font-optical-sizing: var(--font-reg-optical-sizing);
+    --tp2-font-weight: var(--font-reg-weight);
+    --tp2-font-style: var(--font-reg-style);
+    --tp2-font-size: 16px;
+    --tp2-font-size-mobile: 14px;
+    --tp2-line-height: 150%;
+    --tp2-letter-spacing: 0px;
+
+    /* text preset 3 */
+    --tp3-font-family: var(--font-reg-family);
+    --tp3-font-optical-sizing: var(--font-reg-optical-sizing);
+    --tp3-font-weight: var(--font-reg-weight);
+    --tp3-font-style: var(--font-reg-style);
+    --tp3-font-size: 14px;
+    --tp3-font-size-mobile: 12px;
+    --tp3-line-height: 150%;
+    --tp3-letter-spacing: 0px;
+
+    /* text preset 3 (bold) */
+    --tp3-bold-font-family: var(--font-bold-family);
+    --tp3-bold-font-optical-sizing: var(--font-bold-optical-sizing);
+    --tp3-bold-font-weight: var(--font-bold-weight);
+    --tp3-bold-font-style: var(--font-bold-style);
+    --tp3-bold-font-size: 14px;
+    --tp3-bold-font-size-mobile: 12px;
+    --tp3-bold-line-height: 150%;
+    --tp3-bold-letter-spacing: 0px;
+
+    /* spacing */
+    --spacing-300: 24px;
+    --spacing-150: 12px;
+    --spacing-100: 8px;
+    --spacing-50: 4px;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+img {
+    display: block;
+}
+
+html {
+    height: 100%;
+}
+
+body {
+    height: 100%;
+    background-color: var(--yellow);
+}
+
+.container {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+main {
+    flex-grow: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.blog-preview-card {
+    /* size and layout */
+    width: 384px;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    /* margin doesn't include box shadow, so let's move it off center
+       a few pixels to the left so it will look better on mobile screen. */
+    margin-left: 7px;
+    margin-right: 13px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    padding: var(--spacing-300);
+    gap: var(--spacing-300);
+
+
+    /* colors */
+    background-color: var(--white);
+
+    /* border and shadow */
+    border-radius: 20px;
+    /* using box-shadow for inner border instead of using border 
+       property for outer border */
+    box-shadow: inset 0px 0px 0px 1px var(--gray-950),
+                8px 8px 0 0 var(--black);
+}
+
+.blog-preview-card .blog-image {
+    /* background image */
+    background-image: url(../assets/images/illustration-article.svg);
+    background-size: cover;
+    background-position: center;
+
+    /* size */
+    width: 100%;
+    height: 200px;
+    
+    /* border and shadow */
+    border-radius: 10px;
+    /* using box-shadow for inner border instead of using border 
+       property for outer border */
+    box-shadow: inset 0px 0px 0px 1px var(--black),
+                0px 4px 4px 0px hsla(0, 0%, 0%, 25%);
+}
+
+.blog-preview-card .content {
+    /* size and layout */
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    gap: var(--spacing-150);
+}
+
+.blog-preview-card .category {
+    /* size and layout */
+    padding-left: var(--spacing-150);
+    padding-right: var(--spacing-150);
+    padding-top: var(--spacing-50);
+    padding-bottom: var(--spacing-50);
+
+    /* color and border */
+    background-color: var(--yellow);
+    border-radius: 4px;
+
+    /* text properties */
+    font-family: var(--tp3-bold-font-family);
+    font-optical-sizing: var(--tp3-bold-font-optical-sizing);
+    font-weight: var(--tp3-bold-font-weight);
+    font-style: var(--tp3-bold-font-style);
+    font-size: var(--tp3-bold-font-size);
+    line-height: var(--tp3-bold-line-height);
+    letter-spacing: var(--tp3-bold-letter-spacing);
+    color: var(--gray-950);
+}
+
+.blog-preview-card .publish-date {
+    /* text properties */
+    font-family: var(--tp3-font-family);
+    font-optical-sizing: var(--tp3-font-optical-sizing);
+    font-weight: var(--tp3-font-weight);
+    font-style: var(--tp3-font-style);
+    font-size: var(--tp3-font-size);
+    line-height: var(--tp3-line-height);
+    letter-spacing: var(--tp3-letter-spacing);
+    color: var(--gray-950);
+}
+
+.blog-preview-card .title {
+    text-decoration: none;
+
+    & h1 {
+        /* text properties */
+        font-family: var(--tp1-font-family);
+        font-optical-sizing: var(--tp1-font-optical-sizing);
+        font-weight: var(--tp1-font-weight);
+        font-style: var(--tp1-font-style);
+        font-size: var(--tp1-font-size);
+        line-height: var(--tp1-line-height);
+        letter-spacing: var(--tp1-letter-spacing);
+        color: var(--gray-950);
+    }
+
+    & :hover {
+        color: var(--yellow);
+    }
+}
+
+.blog-preview-card .description {
+    /* text properties */
+    font-family: var(--tp2-font-family);
+    font-optical-sizing: var(--tp2-font-optical-sizing);
+    font-weight: var(--tp2-font-weight);
+    font-style: var(--tp2-font-style);
+    font-size: var(--tp2-font-size);
+    line-height: var(--tp2-line-height);
+    letter-spacing: var(--tp2-letter-spacing);
+    color: var(--gray-500);
+}
+
+.blog-preview-card .author {
+     /* size and layout */
+     display: flex;
+     flex-direction: row;
+     align-items: center;
+     gap: var(--spacing-150);
+}
+
+.blog-preview-card .author-pic {
+    /* size and layout */
+    width: 32px;
+    height: 32px;
+}
+
+.blog-preview-card .author-name {
+    /* text properties */
+    font-family: var(--tp3-bold-font-family);
+    font-optical-sizing: var(--tp3-bold-font-optical-sizing);
+    font-weight: var(--tp3-bold-font-weight);
+    font-style: var(--tp3-bold-font-style);
+    font-size: var(--tp3-bold-font-size);
+    line-height: var(--tp3-bold-line-height);
+    letter-spacing: var(--tp3-bold-letter-spacing);
+    color: var(--gray-950);
+}
+
+footer {
+    font-family: var(--tp3-font-family);
+    font-optical-sizing: var(--tp3-font-optical-sizing);
+    font-weight: var(--tp3-font-weight);
+    font-style: var(--tp3-font-style);
+    font-size: 11px;
+    line-height: var(--tp3-line-height);
+    letter-spacing: var(--tp3-letter-spacing);
+    color: var(--gray-950);
+    text-align: center;
+
+    & a {
+        color: hsl(228, 45%, 44%);
+    }
+}
+
+/* for mobile */
+@media (max-width: 600px) {
+    .blog-preview-card {
+        width: 327px;
+    }
+
+    .blog-preview-card .blog-image {
+        box-shadow: none;
+    }
+
+    .blog-preview-card .category {
+        font-size: var(--tp3-bold-font-size-mobile);
+    }
+    
+    .blog-preview-card .publish-date {
+        font-size: var(--tp3-font-size-mobile);
+    }
+    
+    .blog-preview-card .title {
+        & h1 {
+            font-size: var(--tp1-font-size-mobile);
+        }
+    }
+    
+    .blog-preview-card .description {
+        font-size: var(--tp2-font-size-mobile);
+    }
+    
+   .blog-preview-card .author-name {
+        font-size: var(--tp3-bold-font-size-mobile);
+    }
+}
